@@ -11,6 +11,7 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
             ls -l
+            DEBIAN_FRONTEND=noninteractive
             apt-get -y update
             apt-get -y install nodejs
             npm install
