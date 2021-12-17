@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Card Dealer</title>
+    	<script>
+			function dealCard() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("GET", "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", false);
+				xhttp.setRequestHeader("Content-type", "application/json");
+				xhttp.send({});
+				var response = JSON.parse(xhttp.responseText);
+				var deckId = response.deck_id;
+
+				xhttp.open("GET", `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`, false);
+				xhttp.send({});
+				response = JSON.parse(xhttp.responseText);
+				document.getElementById("fact").innerHTML = `Congratulations! You selected a ${response.cards[0].value} of ${response.cards[0].suit}`;				
+			}
+		</script>
+	</head>
+	<body>
+    	<h1>Pick a card, any card</h1>
+    	<button onclick="dealCard()" type="button">Hit me!</button>
+	<p id="fact"></p>
+	</body>
+</html>
