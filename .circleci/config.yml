@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: ubuntu
     steps:
       - checkout
       - run:
@@ -11,4 +11,8 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
             ls -l
+            apt-get update
+            apt-get install node
+            npm install
+            npm test
             
