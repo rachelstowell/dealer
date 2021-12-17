@@ -11,8 +11,8 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
             ls -l
-            apt-get update
-            apt-get install nodejs
+            apt-get -y update
+            apt-get -y install nodejs
             npm install
             npm test
             
