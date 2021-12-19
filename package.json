@@ -4,7 +4,7 @@
   "description": "Simple app that deals a card when a button is clicked",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --ci --runInBand --reporters=default --reporters=jest-junit"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,8 @@
     "jest": "^27.4.5",
     "jest-puppeteer": "^6.0.3",
     "puppeteer": "^13.0.0"
+  },
+  "dependencies": {
+    "jest-junit": "^13.0.0"
   }
 }
