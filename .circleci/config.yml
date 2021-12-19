@@ -16,4 +16,7 @@ jobs:
           name: Run test
           command: 
             npm test
-            
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+      - store_test_results:
+          path: ./reports/junit/
