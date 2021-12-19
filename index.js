@@ -1,8 +1,12 @@
 const http = require('http');
 const fs = require('fs');
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
 const hostname = '127.0.0.1';
-const port = 3000;
 
 const server = http.createServer((request, response) => {
 		response.writeHead(200, {
